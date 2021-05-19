@@ -29,7 +29,7 @@ function preload() {
 
 
 function setup() {
-  createCanvas(displayWidth,displayHeight);
+  createCanvas(700,600);
   maze1 = new Group();
   maze2 = new Group();
   maze3 = new Group();
