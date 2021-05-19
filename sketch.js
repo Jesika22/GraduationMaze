@@ -421,26 +421,31 @@ function gameStateControl(){
         text("You Won, Score :"+points,width/2 -100,height/2);
     }
 
-    if(keyDown("space")){
+    if(keyDown("space") || (touches.length > 0)){
       gameState = 1;
+      touhces = [];
     }
   }
 else if(gameState === 1){
  
-  if (keyDown(LEFT_ARROW)){
+  if (keyDown(LEFT_ARROW)||(girl.x>mouseX && touhces.length > 0)){
     girl.x = girl.x-5;
+    touhces = [];
   } 
 
-  if (keyDown(RIGHT_ARROW)){
+  if (keyDown(RIGHT_ARROW)||(girl.x < mouseX && touhces.length > 0)){
     girl.x = girl.x+5;
+    touhces = [];
   } 
 
-  if (keyDown(UP_ARROW)){
+  if (keyDown(UP_ARROW)||(girl.y<mouseY && touhces.length > 0)){
     girl.y = girl.y-5;
+    touhces = [];
   } 
 
-  if (keyDown(DOWN_ARROW)){
+  if (keyDown(DOWN_ARROW)||(girl.y>mouseY && touhces.length > 0)){
     girl.y = girl.y+5;
+    touches = [];
   } 
 
 
